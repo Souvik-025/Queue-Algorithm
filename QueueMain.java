@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
-public class QueueMain {
+public class Main {
     public static void main(String[] args) {
-        
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Queue Capcity");
-        Queue queue = new Queue(sc.nextInt());
+        Queue<Integer> queue = new Queue<>(sc.nextInt());
         boolean flag = true;
         System.out.println("***********************");
         System.out.println("  WELCOME TO QUEUE");
@@ -21,21 +20,21 @@ public class QueueMain {
                     try {
                         System.out.println("Enter your data");
                         queue.enqueue(sc.nextInt());
-                    } catch (QueueOverflowException e) {
+                    } catch (QueueOverFlowException e) {
                         System.err.println(e.getMessage());
                     }
                     break;
                 case 2:
                     try {
                         System.out.println(queue.dequeue() + " dequeue from Queue");
-                    } catch (QueueUnderflowException e) {
+                    } catch (QueueUnderFlowException e) {
                         System.err.println(e.getMessage());
                     }
                     break;
                 case 3:
                     try {
                         System.out.println(queue.peek());
-                    } catch (QueueUnderflowException e) {
+                    } catch (QueueUnderFlowException e) {
                         System.err.println(e.getMessage());
                     }
                     break;
